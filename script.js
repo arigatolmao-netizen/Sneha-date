@@ -1,6 +1,6 @@
 /* =====================================
    FOR MY MAHARANI ❤️
-   script.js (Part 3A)
+   script.js (FIXED)
 ===================================== */
 
 // Get all pages
@@ -32,12 +32,10 @@ const yesButton = document.getElementById("yes");
 
 if(yesButton){
 
-yesButton.addEventListener("click",()=>{
-
+yesButton.addEventListener("click",(e)=>{
+    e.stopPropagation();
     alert("❤️ Thank you, Maharani! ❤️");
-
     nextPage(7);
-
 });
 
 }
@@ -101,6 +99,9 @@ page.style.transition=".6s";
 // ----------------------------
 
 document.addEventListener("click",(e)=>{
+
+// Don't create hearts on buttons
+if(e.target.tagName === "BUTTON") return;
 
 const heart=document.createElement("div");
 
