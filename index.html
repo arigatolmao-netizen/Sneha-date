@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Maharani ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="stars"></canvas>
+    <canvas id="petals"></canvas>
+    <canvas id="butterflies"></canvas>
+
+    <div class="container">
+        <!-- PAGE 1 -->
+        <div id="page1" class="page active">
+            <h1>❤️</h1>
+            <h2>Hi Maharani!</h2>
+            <p>I have something special to ask you...</p>
+            <button onclick="nextPage(2)">Continue →</button>
+        </div>
+
+        <!-- PAGE 2 -->
+        <div id="page2" class="page">
+            <h2>Do you remember...</h2>
+            <p>Our first meeting? It changed everything for me.</p>
+            <div id="scene">
+                <div id="boy">🧑</div>
+                <div id="bouquet">💐</div>
+                <div id="girl">👩</div>
+            </div>
+            <button onclick="nextPage(3)">Next →</button>
+        </div>
+
+        <!-- PAGE 3 -->
+        <div id="page3" class="page">
+            <h2>You are...</h2>
+            <h3>✨ Beautiful ✨</h3>
+            <h3>💬 Amazing 💬</h3>
+            <h3>🌟 Unforgettable 🌟</h3>
+            <button onclick="nextPage(4)">Continue →</button>
+        </div>
+
+        <!-- PAGE 4 -->
+        <div id="page4" class="page">
+            <h2>Every moment with you...</h2>
+            <p>is a moment I'll cherish forever.</p>
+            <p>Your smile lights up my world. 🌈</p>
+            <button onclick="nextPage(5)">Next →</button>
+        </div>
+
+        <!-- PAGE 5 -->
+        <div id="page5" class="page">
+            <h2>I want to spend...</h2>
+            <p>every single day with you.</p>
+            <p>Building memories, sharing dreams...</p>
+            <button onclick="nextPage(6)">Almost there... →</button>
+        </div>
+
+        <!-- PAGE 6: THE QUESTION -->
+        <div id="page6" class="page">
+            <h1>💕</h1>
+            <h2>Will you be mine?</h2>
+            <p>Forever and always?</p>
+            <div class="choice">
+                <button id="yes">YES! 💚</button>
+                <button id="no">No</button>
+            </div>
+        </div>
+
+        <!-- PAGE 7: SUCCESS -->
+        <div id="page7" class="page">
+            <h1>🎉</h1>
+            <h2>I LOVE YOU!</h2>
+            <p>You just made me the happiest person alive! 💕</p>
+            <p>Forever starts now... 💬</p>
+            <button onclick="location.reload()">Start Again ↻</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
