@@ -1,6 +1,6 @@
 /* =====================================
    FOR MY MAHARANI ❤️
-   script.js (FIXED)
+   script.js (FIXED - Tab Navigation)
 ===================================== */
 
 // Get all pages
@@ -67,19 +67,31 @@ noButton.style.top=randomY+"px";
 }
 
 // ----------------------------
-// ENTER KEY SUPPORT
+// KEYBOARD SUPPORT
 // ----------------------------
 
 document.addEventListener("keydown",(e)=>{
 
+// Enter key - navigate to next page
 if(e.key==="Enter"){
-
-if(currentPage<7){
-
-nextPage(currentPage+1);
-
+    e.preventDefault();
+    if(currentPage<7){
+        nextPage(currentPage+1);
+    }
 }
 
+// Tab key - allow normal tab behavior
+if(e.key==="Tab"){
+    // Let browser handle tab normally
+    return true;
+}
+
+// Space key - click focused button
+if(e.key===" "){
+    e.preventDefault();
+    if(document.activeElement.tagName === "BUTTON"){
+        document.activeElement.click();
+    }
 }
 
 });
