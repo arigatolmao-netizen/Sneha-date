@@ -1,6 +1,6 @@
 /* =====================================
    FOR MY MAHARANI ❤️
-   script.js (FIXED - Tab Navigation)
+   script.js (Mobile Optimized)
 ===================================== */
 
 // Get all pages
@@ -64,6 +64,23 @@ noButton.style.top=randomY+"px";
 
 });
 
+// Mobile: Also run on touch
+noButton.addEventListener("touchstart",()=>{
+
+const maxX=220;
+const maxY=180;
+
+const randomX=Math.random()*maxX-maxX/2;
+const randomY=Math.random()*maxY-maxY/2;
+
+noButton.style.position="relative";
+
+noButton.style.left=randomX+"px";
+
+noButton.style.top=randomY+"px";
+
+});
+
 }
 
 // ----------------------------
@@ -78,12 +95,6 @@ if(e.key==="Enter"){
     if(currentPage<7){
         nextPage(currentPage+1);
     }
-}
-
-// Tab key - allow normal tab behavior
-if(e.key==="Tab"){
-    // Let browser handle tab normally
-    return true;
 }
 
 // Space key - click focused button
@@ -124,6 +135,40 @@ heart.style.position="fixed";
 heart.style.left=e.clientX+"px";
 
 heart.style.top=e.clientY+"px";
+
+heart.style.fontSize="22px";
+
+heart.style.pointerEvents="none";
+
+heart.style.animation="heartPop 1s linear forwards";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},1000);
+
+});
+
+// Mobile touch hearts
+document.addEventListener("touchend",(e)=>{
+
+// Don't create hearts on buttons
+if(e.target.tagName === "BUTTON") return;
+
+const touch = e.changedTouches[0];
+
+const heart=document.createElement("div");
+
+heart.innerHTML="❤️";
+
+heart.style.position="fixed";
+
+heart.style.left=touch.clientX+"px";
+
+heart.style.top=touch.clientY+"px";
 
 heart.style.fontSize="22px";
 
