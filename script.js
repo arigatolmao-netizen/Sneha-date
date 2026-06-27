@@ -1,6 +1,6 @@
 /* =====================================
    FOR MY MAHARANI ❤️
-   script.js (Mobile Optimized)
+   script.js (Part 3A)
 ===================================== */
 
 // Get all pages
@@ -32,10 +32,12 @@ const yesButton = document.getElementById("yes");
 
 if(yesButton){
 
-yesButton.addEventListener("click",(e)=>{
-    e.stopPropagation();
+yesButton.addEventListener("click",()=>{
+
     alert("❤️ Thank you, Maharani! ❤️");
-    nextPage(7);
+
+    nextPage(6);
+
 });
 
 }
@@ -64,45 +66,22 @@ noButton.style.top=randomY+"px";
 
 });
 
-// Mobile: Also run on touch
-noButton.addEventListener("touchstart",()=>{
-
-const maxX=220;
-const maxY=180;
-
-const randomX=Math.random()*maxX-maxX/2;
-const randomY=Math.random()*maxY-maxY/2;
-
-noButton.style.position="relative";
-
-noButton.style.left=randomX+"px";
-
-noButton.style.top=randomY+"px";
-
-});
-
 }
 
 // ----------------------------
-// KEYBOARD SUPPORT
+// ENTER KEY SUPPORT
 // ----------------------------
 
 document.addEventListener("keydown",(e)=>{
 
-// Enter key - navigate to next page
 if(e.key==="Enter"){
-    e.preventDefault();
-    if(currentPage<7){
-        nextPage(currentPage+1);
-    }
+
+if(currentPage<7){
+
+nextPage(currentPage+1);
+
 }
 
-// Space key - click focused button
-if(e.key===" "){
-    e.preventDefault();
-    if(document.activeElement.tagName === "BUTTON"){
-        document.activeElement.click();
-    }
 }
 
 });
@@ -123,9 +102,6 @@ page.style.transition=".6s";
 
 document.addEventListener("click",(e)=>{
 
-// Don't create hearts on buttons
-if(e.target.tagName === "BUTTON") return;
-
 const heart=document.createElement("div");
 
 heart.innerHTML="❤️";
@@ -135,40 +111,6 @@ heart.style.position="fixed";
 heart.style.left=e.clientX+"px";
 
 heart.style.top=e.clientY+"px";
-
-heart.style.fontSize="22px";
-
-heart.style.pointerEvents="none";
-
-heart.style.animation="heartPop 1s linear forwards";
-
-document.body.appendChild(heart);
-
-setTimeout(()=>{
-
-heart.remove();
-
-},1000);
-
-});
-
-// Mobile touch hearts
-document.addEventListener("touchend",(e)=>{
-
-// Don't create hearts on buttons
-if(e.target.tagName === "BUTTON") return;
-
-const touch = e.changedTouches[0];
-
-const heart=document.createElement("div");
-
-heart.innerHTML="❤️";
-
-heart.style.position="fixed";
-
-heart.style.left=touch.clientX+"px";
-
-heart.style.top=touch.clientY+"px";
 
 heart.style.fontSize="22px";
 

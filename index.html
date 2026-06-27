@@ -7,77 +7,81 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <canvas id="stars"></canvas>
-    <canvas id="petals"></canvas>
-    <canvas id="butterflies"></canvas>
 
-    <div class="container">
-        <!-- PAGE 1 -->
-        <div id="page1" class="page active">
-            <h1>❤️</h1>
-            <h2>Hi Maharani!</h2>
-            <p>I have something special to ask you...</p>
-            <button onclick="nextPage(2)">Continue →</button>
+<!-- Decorative Elements -->
+<div id="stars"></div>
+<div id="petals"></div>
+<div id="butterflies"></div>
+
+<!-- Main Container -->
+<div class="container">
+
+    <!-- PAGE 1 -->
+    <div class="page active" id="page1">
+        <h1>❤️</h1>
+        <h2>Hi Sneha!</h2>
+        <p>There's something I want to ask you...</p>
+        <button onclick="nextPage(2)">Continue</button>
+    </div>
+
+    <!-- PAGE 2 -->
+    <div class="page" id="page2">
+        <h2>Do you believe in fate?</h2>
+        <p>Because I think it brought us together...</p>
+        <button onclick="nextPage(3)">Yes, tell me more</button>
+    </div>
+
+    <!-- PAGE 3 -->
+    <div class="page" id="page3">
+        <h2>The Moment I Saw You</h2>
+        <p>My heart knew something my mind hadn't figured out yet...</p>
+        <div id="scene">
+            <div id="boy">🧑</div>
+            <div id="bouquet">💐</div>
+            <div id="girl">👩</div>
         </div>
+        <button onclick="nextPage(4)">Next</button>
+    </div>
 
-        <!-- PAGE 2 -->
-        <div id="page2" class="page">
-            <h2>Do you remember...</h2>
-            <p>Our first meeting? It changed everything for me.</p>
-            <div id="scene">
-                <div id="boy">🧑</div>
-                <div id="bouquet">💐</div>
-                <div id="girl">👩</div>
-            </div>
-            <button onclick="nextPage(3)">Next →</button>
-        </div>
+    <!-- PAGE 4 -->
+    <div class="page" id="page4">
+        <h2>Every Moment With You</h2>
+        <p>Is like a beautiful dream that I never want to wake up from...</p>
+        <p>Your smile lights up my entire world ✨</p>
+        <button onclick="nextPage(5)">I'm ready</button>
+    </div>
 
-        <!-- PAGE 3 -->
-        <div id="page3" class="page">
-            <h2>You are...</h2>
-            <h3>✨ Beautiful ✨</h3>
-            <h3>💬 Amazing 💬</h3>
-            <h3>🌟 Unforgettable 🌟</h3>
-            <button onclick="nextPage(4)">Continue →</button>
-        </div>
-
-        <!-- PAGE 4 -->
-        <div id="page4" class="page">
-            <h2>Every moment with you...</h2>
-            <p>is a moment I'll cherish forever.</p>
-            <p>Your smile lights up my world. 🌈</p>
-            <button onclick="nextPage(5)">Next →</button>
-        </div>
-
-        <!-- PAGE 5 -->
-        <div id="page5" class="page">
-            <h2>I want to spend...</h2>
-            <p>every single day with you.</p>
-            <p>Building memories, sharing dreams...</p>
-            <button onclick="nextPage(6)">Almost there... →</button>
-        </div>
-
-        <!-- PAGE 6: THE QUESTION -->
-        <div id="page6" class="page">
-            <h1>💕</h1>
-            <h2>Will you be mine?</h2>
-            <p>Forever and always?</p>
-            <div class="choice">
-                <button id="yes">YES! 💚</button>
-                <button id="no">No</button>
-            </div>
-        </div>
-
-        <!-- PAGE 7: SUCCESS -->
-        <div id="page7" class="page">
-            <h1>🎉</h1>
-            <h2>I LOVE YOU!</h2>
-            <p>You just made me the happiest person alive! 💕</p>
-            <p>Forever starts now... 💬</p>
-            <button onclick="location.reload()">Start Again ↻</button>
+    <!-- PAGE 5 -->
+    <div class="page" id="page5">
+        <h2>Sneha...</h2>
+        <p>Will you be my Maharani?</p>
+        <p>Forever and always? 💕</p>
+        <div class="choice">
+            <button id="yes">YES! ❤️</button>
+            <button id="no">No</button>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- PAGE 6 -->
+    <div class="page" id="page6">
+        <h2>You Said YES! 🎉</h2>
+        <p>I'm the happiest person in the world right now!</p>
+        <p>Thank you for making me the luckiest person alive 💕</p>
+        <button onclick="nextPage(7)">See More</button>
+    </div>
+
+    <!-- PAGE 7 -->
+    <div class="page" id="page7">
+        <h1>Forever With You ❤️</h1>
+        <h3>I Love You Maharani!</h3>
+        <p>This is just the beginning of our beautiful story...</p>
+        <p>Every day with you is a gift 🎁</p>
+        <button onclick="location.reload()">Restart</button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
